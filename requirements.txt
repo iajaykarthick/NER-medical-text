@@ -7,3 +7,5 @@ matplotlib
 kaggle
 spacy
 nltk
+tensorflow-addons
+
