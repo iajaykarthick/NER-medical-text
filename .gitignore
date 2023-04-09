@@ -2,3 +2,7 @@ data
 .idea
 .DS_Store
 .ipynb_checkpoints
+
+bkup
+back_up
+__pycache__
