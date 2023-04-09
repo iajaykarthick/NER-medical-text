@@ -1,5 +1,4 @@
 tensorflow-macos==2.9.0
-tensorflow-gpu
 pandas==1.4.2
 numpy==1.22.4
 scipy==1.7.3
@@ -17,3 +16,4 @@ wordcloud
 unidecode
 gensim
 keras_contrib
+torch

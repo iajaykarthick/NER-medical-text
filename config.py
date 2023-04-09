@@ -42,4 +42,118 @@ entity_to_acronyms = {
     'Weight': 'WEI'
 }
 
+index_to_label = {1: 'B-ACT',
+ 2: 'B-ADM',
+ 3: 'B-AGE',
+ 4: 'B-ARA',
+ 5: 'B-BAT',
+ 6: 'B-BST',
+ 7: 'B-CLE',
+ 8: 'B-COL',
+ 9: 'B-COR',
+ 10: 'B-DAT',
+ 11: 'B-DET',
+ 12: 'B-DIA',
+ 13: 'B-DIS',
+ 14: 'B-DOS',
+ 15: 'B-DUR',
+ 16: 'B-FAM',
+ 17: 'B-FRE',
+ 18: 'B-HEI',
+ 19: 'B-HIS',
+ 20: 'B-LAB',
+ 21: 'B-MAS',
+ 22: 'B-MED',
+ 23: 'B-NBL',
+ 24: 'B-OCC',
+ 25: 'B-OTE',
+ 26: 'B-OTH',
+ 27: 'B-OUT',
+ 28: 'B-PER',
+ 29: 'B-QUC',
+ 30: 'B-SEV',
+ 31: 'B-SEX',
+ 32: 'B-SHA',
+ 33: 'B-SIG',
+ 34: 'B-SUB',
+ 35: 'B-TEX',
+ 36: 'B-THP',
+ 37: 'B-TIM',
+ 38: 'B-VOL',
+ 39: 'B-WEI',
+ 40: 'I-ACT',
+ 41: 'I-ADM',
+ 42: 'I-AGE',
+ 43: 'I-ARA',
+ 44: 'I-BAT',
+ 45: 'I-BST',
+ 46: 'I-CLE',
+ 47: 'I-COL',
+ 48: 'I-COR',
+ 49: 'I-DAT',
+ 50: 'I-DET',
+ 51: 'I-DIA',
+ 52: 'I-DIS',
+ 53: 'I-DOS',
+ 54: 'I-DUR',
+ 55: 'I-FAM',
+ 56: 'I-FRE',
+ 57: 'I-HEI',
+ 58: 'I-HIS',
+ 59: 'I-LAB',
+ 60: 'I-MAS',
+ 61: 'I-MED',
+ 62: 'I-NBL',
+ 63: 'I-OCC',
+ 64: 'I-OTE',
+ 65: 'I-OTH',
+ 66: 'I-OUT',
+ 67: 'I-PER',
+ 68: 'I-QUC',
+ 69: 'I-SEV',
+ 70: 'I-SHA',
+ 71: 'I-SIG',
+ 72: 'I-SUB',
+ 73: 'I-TEX',
+ 74: 'I-THP',
+ 75: 'I-TIM',
+ 76: 'I-VOL',
+ 77: 'I-WEI',
+ 78: 'O',
+ 0: '<PAD>'}
+
+MAX_LENGTH = 100
+
 acronyms_to_entities = {v: k for k, v in entity_to_acronyms.items()}
+
+
+models = {
+    "model_1": {
+        "path": "../models/model_1.h5",
+        "title": "Bidirectional LSTM Model with single LSTM layer"
+    },
+    "model_2": {
+        "path": "../models/model_2.h5",
+        "title": "Bidirectional LSTM Model with two LSTM layers and one Hidden Dense Layer"
+    },
+    "model_3": {
+        "path": "../models/model_3.h5",
+        "title": "Bidirectional LSTM model with BioWordVecEmbedding Layers followed two LSTM layers and one Hidden Dense Layer"
+    },
+    "model_4": {
+        "path": "../models/model_4.h5",
+        "title": "Bidirectional LSTM Model with Time Distributed Dense Layers - Single LSTM layer and Two time distributed dense layers"
+    },
+    "model_5": {
+        "path": "../models/model_5.h5",
+        "title": "Bidirectional LSTM Model with two LSTM layers and one Hidden Dense Layer"
+    },
+    "model_6": {
+        "path": "../models/model_6.h5",
+        "title": "Bidirectional LSTM Time Distirbuted Dense Layers followed by CRF Layer"
+    },
+    "model_7": {
+        "path": "../models/model_7.h5",
+        "title": "Bidirectional LSTM CRF model with BioWordVecEmbedding Layers followed two LSTM layers and Time Distirbuted Dense Layers followed by CRF Layer"
+    }
+}

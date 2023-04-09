@@ -1,5 +1,6 @@
 import re
 import os
+import pickle
 
 import spacy
 from spacy import displacy
@@ -14,6 +15,9 @@ from nltk.corpus import stopwords
 
 STOP_WORDS = stopwords.words('english')
 
+# Load the tokenizer from file
+with open('../data/tokenizer.pickle', 'rb') as handle:
+    tokenizer = pickle.load(handle)
 
 def load_data(data_dir):
 	data = np.load(os.path.join(data_dir, 'data.npz'), allow_pickle=True)
@@ -117,7 +121,7 @@ def tokenize_text(text):
 # 	return tokens
 
 
-def predict(text, model, tokenizer, index_to_label, acronyms_to_entities, MAX_LENGTH):
+def predict(text, model, index_to_label, acronyms_to_entities, MAX_LENGTH):
 	"""
 	Predicts named entities in a text using a trained NER model.
 
@@ -268,7 +272,7 @@ def display_pred(text, entities):
 # 			print(f"{tokens[i]}: {acronyms_to_entities[predicted_labels[i][2:]]}")
 #
 
-def predict_multi_line_text(text, model, tokenizer, index_to_label, acronyms_to_entities, MAX_LENGTH):
+def predict_multi_line_text(text, model, index_to_label, acronyms_to_entities, MAX_LENGTH):
 	
 	# sentences = re.split(r' *[\.\?!][\'"\)\]]* *', text)
 	# sent_tokens = []
