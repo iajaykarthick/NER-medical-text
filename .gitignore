@@ -2,7 +2,7 @@ data
 .idea
 .DS_Store
 .ipynb_checkpoints
-
+models
 bkup
 back_up
 __pycache__
