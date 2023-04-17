@@ -150,10 +150,10 @@ models = {
     },
     "model_6": {
         "path": "../models/model_6.h5",
-        "title": "Bidirectional LSTM Time Distirbuted Dense Layers followed by CRF Layer"
+        "title": "Bidirectional LSTM Time Distirbuted Dense Layers and Convolutional 1D layer"
     },
     "model_7": {
         "path": "../models/model_7.h5",
-        "title": "Bidirectional LSTM CRF model with BioWordVecEmbedding Layers followed two LSTM layers and Time Distirbuted Dense Layers followed by CRF Layer"
+        "title": "Bidirectional LSTM CRF model with BioWordVecEmbedding Layers followed two LSTM layers, Time Distirbuted Dense Layers and Convolutional 1D layer"
     }
 }
