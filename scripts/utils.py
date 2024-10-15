@@ -163,7 +163,7 @@ def predict(text, model, index_to_label, acronyms_to_entities, MAX_LENGTH):
 		start = start_end_range[0]
 		end = start_end_range[1]
 		
-		if label != 'O':
+		if label not in ['O', '<PAD>']:
 			entity_type = acronyms_to_entities[label[2:]]
 			entity = (start, end, entity_type)
 			entities.append(entity)
@@ -172,6 +172,8 @@ def predict(text, model, index_to_label, acronyms_to_entities, MAX_LENGTH):
 	print("Predicted Named Entities:")
 	for i in range(len(all_tokens)):
 		if predicted_labels[i] == 'O':
+			print(f"{all_tokens[i]}: {predicted_labels[i]}")
+		elif predicted_labels[i] == '<PAD>':
 			print(f"{all_tokens[i]}: {predicted_labels[i]}")
 		else:
 			print(f"{all_tokens[i]}: {acronyms_to_entities[predicted_labels[i][2:]]}")
@@ -314,7 +316,7 @@ def predict_multi_line_text(text, model, index_to_label, acronyms_to_entities, M
 			start = start_end_range[0]
 			end = start_end_range[1]
 			
-			if label != 'O':
+			if label not in ['O', '<PAD>']:
 				entity_type = acronyms_to_entities[label[2:]]
 				entity = (start, end, entity_type)
 				entities.append(entity)
@@ -324,6 +326,8 @@ def predict_multi_line_text(text, model, index_to_label, acronyms_to_entities, M
 	for i in range(len(sent_tokens)):
 		for j in range(len(sent_tokens[i])):
 			if predicted_labels[i][j] == 'O':
+				print(f"{sent_tokens[i][j]}: {predicted_labels[i][j]}")
+			elif predicted_labels[i][j] == '<PAD>':
 				print(f"{sent_tokens[i][j]}: {predicted_labels[i][j]}")
 			else:
 				print(f"{sent_tokens[i][j]}: {acronyms_to_entities[predicted_labels[i][j][2:]]}")
